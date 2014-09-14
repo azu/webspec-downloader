@@ -3,10 +3,11 @@
  * LICENSE : MIT
  */
 "use strict";
-var biblio = require("./specref/biblio.json");
 var downloader = require("./lib/downloader");
 var FS = require("q-io/fs");
 module.exports = function (options) {
+    var biblioPath = options.dataPath ? options.dataPath : "./specref/biblio.json";
+    var biblio = require(biblioPath);
     var SPECURLList = Object.keys(biblio).map(function (key) {
         return biblio[key].href;
     }).filter(function (URL) {
