@@ -5,7 +5,7 @@ Download Web spec using [tobie/specref](https://github.com/tobie/specref "tobie/
 ## Installation
 
 ```
-npm install webspec-downloader
+npm install webspec-downloader -g
 ```
 
 ## Usage
