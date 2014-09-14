@@ -6,23 +6,20 @@
 var biblio = require("./specref/biblio.json");
 var downloader = require("./lib/downloader");
 var FS = require("q-io/fs");
-var SPECURLList = Object.keys(biblio).map(function (key) {
-    return biblio[key].href;
-}).filter(function (URL) {
-    return URL != null;
-}).filter(function (URL) {
-    return !/(\.pdf$|\.txt$|\.zip$)/i.test(URL);
-});
-
-
-var downloadDir = require("path").join(process.cwd(), "_download");
-FS.makeDirectory(downloadDir).finally(function () {
-    downloader(SPECURLList, {
-        dir: downloadDir
-    }).then(function (results) {
-        process.exit(0);
-    }).catch(function (error) {
-        console.error(error);
-        process.exit(1);
+module.exports = function (options) {
+    var SPECURLList = Object.keys(biblio).map(function (key) {
+        return biblio[key].href;
+    }).filter(function (URL) {
+        return URL != null;
+    }).filter(function (URL) {
+        return !/(\.pdf$|\.txt$|\.zip$)/i.test(URL);
     });
-});
+    options.dir = options.dir ? options.dir : "_downloads";
+    var downloadDir = require("path").join(process.cwd(), options.dir);
+    return FS.makeDirectory(downloadDir).finally(function () {
+        return downloader(SPECURLList, options).catch(function (error) {
+            console.error(error);
+            return error;
+        });
+    });
+};
