@@ -1,15 +1,15 @@
 {
   "name": "webspec-downloader",
   "description": "Download all web spec.",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "homepage": "https://github.com/azu/webspec-downloader/",
   "repository": {
     "type": "git",
     "url": "https://github.com/azu/webspec-downloader.git"
   },
   "main": "index.js",
-  "bin":{
-      "webspec-downloader": "bin/cmd.js"
+  "bin": {
+    "webspec-downloader": "bin/cmd.js"
   },
   "scripts": {
     "test": "mocha test/*.js"
