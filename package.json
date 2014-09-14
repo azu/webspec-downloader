@@ -1,7 +1,7 @@
 {
   "name": "webspec-downloader",
   "description": "Download all web spec.",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "homepage": "https://github.com/azu/webspec-downloader/",
   "repository": {
     "type": "git",
