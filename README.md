@@ -12,6 +12,8 @@ npm install webspec-downloader
 
 Download files to `path/to/download-dir`.
 
+Default: `_downloads`
+
 ```
 webspec-downloader path/to/download-dir
 ```
