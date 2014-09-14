@@ -23,7 +23,6 @@
     "url": "https://github.com/azu/webspec-downloader/issues"
   },
   "dependencies": {
-    "concat-stream": "^1.4.6",
     "q": "^1.0.1",
     "q-io": "^1.11.5"
   }
