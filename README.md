@@ -10,13 +10,16 @@ npm install webspec-downloader -g
 
 ## Usage
 
-Download files to `path/to/download-dir`.
+`--dir`: Download files to `path/to/download-dir`.
 
 Default: `_downloads`
 
 ```
-webspec-downloader path/to/download-dir
+webspec-downloader --dir path/to/download-dir
 ```
+
+`--ref`: path to `biblio.json`.
+
 
 ## Contributing
 
